@@ -207,7 +207,6 @@ body {
 .navigation-list-link:hover,
 .navigation-list-link:focus {
   color: #2196f3;
-  transform: transition;
 }
 
 /*============END HEADER=========*/
@@ -710,7 +709,7 @@ body {
 .overlay-information {
   padding: 63px 24px;
   font-family: var(--accent-font);
-  font-weight: 400px;
+  font-weight: 400;
   font-size: 18px;
   line-height: 1.556;
   letter-spacing: 0.03em;
