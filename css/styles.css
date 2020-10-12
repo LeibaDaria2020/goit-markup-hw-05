@@ -126,8 +126,17 @@ body {
 
   transition: color 250ms var(--transition-timing-function);
 }
+.current-page {
+  position: relative;
+  padding-bottom: 32px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.143;
+  letter-spacing: 0.02em;
+  color: var(--hover-color);
+}
 
-.navigation-list-link::after {
+.current-page::after {
   content: "";
   position: absolute;
   left: 0;
@@ -135,10 +144,9 @@ body {
   width: 100%;
   height: 4px;
   background-color: var(--hover-color);
+  color: var(--hover-color);
 
-  transition: visibility 250ms var(--transition-timing-function);
-
-  visibility: hidden;
+  transition: 250ms var(--transition-timing-function);
 }
 
 .navigation-list-item {
@@ -150,7 +158,7 @@ body {
 }
 
 .address {
-  margin: auto;
+  margin-left: auto;
 }
 
 .address-list {
@@ -172,6 +180,9 @@ body {
   color: var(--accent-color);
 
   transition: color 250ms var(--transition-timing-function);
+}
+.header-tel-link {
+  padding-left: 30px;
 }
 .envelope-icon {
   display: block;
@@ -195,14 +206,6 @@ body {
 .header-tel-link:focus {
   color: var(--hover-color);
   fill: var(--hover-color);
-}
-
-.header-list-item:not(:last-child) {
-  margin-right: 50px;
-}
-
-.navigation-list-item:hover .navigation-list-link::after {
-  visibility: visible;
 }
 
 .navigation-list-link:hover,
@@ -335,6 +338,30 @@ body {
 .services-list {
   display: flex;
   justify-content: space-between;
+}
+.services-img-wrapper {
+  position: relative;
+}
+.overlay-services {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 370px;
+  height: 70px;
+  background: rgba(47, 48, 58, 0.8);
+}
+
+.overlay-services-diskription {
+  padding-top: 27px;
+  padding-bottom: 27px;
+  font-family: var(--accent-font);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.143;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #fff;
+  text-transform: uppercase;
 }
 /*<===========END SERVICES===========>*/
 
@@ -621,7 +648,7 @@ body {
   background: #f5f4fa;
   border-radius: 4px;
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms var(--transition-timing-function), color 250ms var(--transition-timing-function);
 }
 
 .portf-modal-btn:hover,
@@ -661,7 +688,10 @@ body {
 }
 .works-list-item:hover .overlay {
   visibility: visible;
+  overflow: hidden;
+  transform: translateY(-100%);
 }
+
 .box-portf {
   display: flex;
   flex-direction: column;
@@ -676,6 +706,7 @@ body {
 }
 .work-list-img-wrapper {
   position: relative;
+  overflow: hidden;
 }
 .works-list-title {
   margin-bottom: 4px;
@@ -703,13 +734,10 @@ body {
   background: rgba(33, 150, 243, 0.9);
 
   visibility: hidden;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  /* transform: translateY(110%); */
-  /* animation: animateY100 3000ms infinite 1000ms; */
+
+  transition: 2000ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0%);
 }
-/* .overlay::before {
-  content: "translateY(150px)";
-} */
 
 .overlay-information {
   padding: 63px 24px;
@@ -719,8 +747,6 @@ body {
   line-height: 1.556;
   letter-spacing: 0.03em;
   color: #fff;
-
-  /* transition: 250ms cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
 /*============PORTF FOOTER=========*/
