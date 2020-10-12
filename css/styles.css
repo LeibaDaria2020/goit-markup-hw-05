@@ -1,4 +1,5 @@
 :root {
+  --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   --accent-font: "Roboto", sans-serif;
   --secondary-font: "Raleway", sans-serif;
   --accent-color: #757575;
@@ -47,7 +48,7 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
 
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 250ms var(--transition-timing-function);
 }
 
 .modal {
@@ -123,7 +124,7 @@ body {
   letter-spacing: 0.02em;
   color: var(--secondary-font);
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms var(--transition-timing-function);
 }
 
 .navigation-list-link::after {
@@ -135,7 +136,7 @@ body {
   height: 4px;
   background-color: var(--hover-color);
 
-  transition: visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: visibility 250ms var(--transition-timing-function);
 
   visibility: hidden;
 }
@@ -170,7 +171,7 @@ body {
   letter-spacing: 0.02em;
   color: var(--accent-color);
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms var(--transition-timing-function);
 }
 .envelope-icon {
   display: block;
@@ -702,9 +703,13 @@ body {
   background: rgba(33, 150, 243, 0.9);
 
   visibility: hidden;
-
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* transform: translateY(110%); */
+  /* animation: animateY100 3000ms infinite 1000ms; */
 }
+/* .overlay::before {
+  content: "translateY(150px)";
+} */
 
 .overlay-information {
   padding: 63px 24px;
